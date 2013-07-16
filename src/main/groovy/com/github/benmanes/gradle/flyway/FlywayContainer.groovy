@@ -25,6 +25,9 @@ public class FlywayContainer {
   /** The dependencies that all flyway tasks depend on. */
   List<Object> dependsOnTasks = []
 
+  /** The level of information to be returned by flywayInfo. */
+  String infoLevel = 'All'
+
   /**
    * Indicates the order to concatenate the schemas:
    * <ul>

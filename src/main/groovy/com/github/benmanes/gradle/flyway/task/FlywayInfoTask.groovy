@@ -28,8 +28,21 @@ class FlywayInfoTask extends AbstractFlywayTask {
   }
 
   def run(String name, Flyway flyway) {
-    def all = flyway.info().all()
+    def result
+    switch (infoLevel.toLowerCase()) {
+        case "pending":
+            result = flyway.info().pending()
+            break
+        case "current":
+            result = flyway.info().current()
+            break
+        case "applied":
+            result = flyway.info().applied()
+            break
+        default:
+            result = flyway.info().all()
+    }
     println name
-    println MigrationInfoDumper.dumpToAsciiTable(all)
+    println MigrationInfoDumper.dumpToAsciiTable(result)
   }
 }

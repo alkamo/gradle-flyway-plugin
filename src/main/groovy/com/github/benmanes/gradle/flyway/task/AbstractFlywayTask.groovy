@@ -32,6 +32,7 @@ import org.gradle.api.tasks.TaskAction
  */
 abstract class AbstractFlywayTask extends DefaultTask {
   private static final DEFAULT_LOCATION = "db/migration"
+  public String infoLevel = 'All'
 
   AbstractFlywayTask() {
     group = 'Flyway'
@@ -50,6 +51,7 @@ abstract class AbstractFlywayTask extends DefaultTask {
       addClassesDirToClassLoader()
     }
 
+    infoLevel = project.flyway.infoLevel
     project.flyway.databases.each { flywayExt ->
       logger.info "Executing ${this.getName()} for ${flywayExt.name}"
       try {

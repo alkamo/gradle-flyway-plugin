@@ -1,7 +1,7 @@
 apply plugin: 'groovy'
 apply plugin: 'nexus'
 
-group = 'com.github.ben-manes'
+group = 'com.github.alkamo'
 version = '0.6'
 
 buildscript {
@@ -42,6 +42,12 @@ task groovydocJar(type: Jar, dependsOn: groovydoc) {
 
 artifacts {
   archives groovydocJar
+}
+
+nexus {
+    sign = project.hasProperty("nexusSign") ? Boolean.valueOf(project.nexusSign) : sign
+    repositoryUrl = project.hasProperty("nexusRepositoryUrl") ? project.nexusRepositoryUrl : repositoryUrl
+    snapshotRepositoryUrl = project.hasProperty("nexusSnapshotRepositoryUrl") ? project.nexusSnapshotRepositoryUrl : snapshotRepositoryUrl
 }
 
 modifyPom {
