@@ -1,9 +1,10 @@
-# Gradle Flyway Plugin (<b>deprecated</b>)
+# Gradle Flyway Plugin 
+##(<b>deprecated (somewhat)</b>)
 [Flyway](http://flywaydb.org) database migration tasks for Gradle.
 
 <b>
 Flyway v2.2 includes an [official plugin](http://flywaydb.org/documentation/gradle) based on this
-one. Note that the feature set diverged after contributing, e.g. removal of multi-db support.
+one. Note that the feature set diverged after contributing, e.g. removal of multi-db support. This fork is being maintained independently, in order to perpetuate and continue development on the multi-DB model.
 </b>
 
 ## Usage
