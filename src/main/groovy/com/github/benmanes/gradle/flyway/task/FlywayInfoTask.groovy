@@ -42,7 +42,7 @@ class FlywayInfoTask extends AbstractFlywayTask {
         default:
             result = flyway.info().all()
     }
-    println name
-    println MigrationInfoDumper.dumpToAsciiTable(result)
+    logger.lifecycle("Info (${infoLevel}): ${name}")
+    logger.quiet(MigrationInfoDumper.dumpToAsciiTable(result))
   }
 }

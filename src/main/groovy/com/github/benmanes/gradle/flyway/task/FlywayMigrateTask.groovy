@@ -27,8 +27,8 @@ class FlywayMigrateTask extends AbstractFlywayTask {
   }
 
   def run(String name, Flyway flyway) {
-    logger.info("Migrating database ${name}")
     int applied = flyway.migrate()
+    logger.lifecycle("Migrate: ${name}: ${applied} applied")
     didWork = (applied > 0)
   }
 }

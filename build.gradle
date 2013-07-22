@@ -2,7 +2,7 @@ apply plugin: 'groovy'
 apply plugin: 'nexus'
 
 group = 'com.github.alkamo'
-version = '0.6'
+version = '0.6.2'
 
 buildscript {
   repositories {
